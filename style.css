@@ -1,0 +1,119 @@
+:root {
+    --bg: #1f2a24;
+    --bg-card: #26332c;
+    --cream: #f1ead9;
+    --accent: #be5a2e;
+    --muted: #9fb0a3;
+    --error: #d9573f;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+    line-height: 1.5;
+  }
+  header {
+    padding: 48px 24px 28px;
+    text-align: center;
+    border-bottom: 1px solid rgba(241,234,217,0.15);
+  }
+  header h1 {
+    font-family: 'Fraunces', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    font-weight: 700;
+    margin: 0 0 8px;
+  }
+  header p { color: var(--muted); margin: 0; }
+
+  main { max-width: 900px; margin: 0 auto; padding: 32px 24px 64px; }
+
+  .toolbar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .toolbar input[type="text"] {
+    flex: 1;
+    min-width: 200px;
+    padding: 10px 14px;
+    border-radius: 4px;
+    border: 1px solid rgba(241,234,217,0.25);
+    background: var(--bg-card);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+  }
+  button {
+    padding: 10px 16px;
+    border-radius: 4px;
+    border: none;
+    background: var(--accent);
+    color: var(--cream);
+    font-weight: 600;
+    cursor: pointer;
+    font-family: 'Inter', sans-serif;
+  }
+  button.secondary {
+    background: transparent;
+    border: 1px solid rgba(241,234,217,0.3);
+  }
+
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+  }
+  .card {
+    background: var(--bg-card);
+    border-radius: 4px;
+    padding: 20px;
+    border-left: 3px solid var(--accent);
+  }
+  .card.habis { border-left-color: var(--muted); opacity: 0.55; }
+  .card h3 { font-family: 'Fraunces', serif; font-size: 1.1rem; margin: 0 0 6px; }
+  .card .kategori { color: var(--muted); font-size: 0.85rem; margin-bottom: 10px; }
+  .card .harga { font-size: 1.05rem; font-weight: 600; color: var(--accent); }
+  .card .stok { margin-top: 8px; font-size: 0.85rem; color: var(--muted); }
+
+  .hidden { display: none; }
+
+  .kosong {
+    color: var(--muted);
+    text-align: center;
+    padding: 24px;
+    font-style: italic;
+  }
+
+  .form-tambah {
+    background: var(--bg-card);
+    border-radius: 6px;
+    padding: 24px;
+  }
+  .form-tambah h2 {
+    font-family: 'Fraunces', serif;
+    font-size: 1.3rem;
+    margin: 0 0 16px;
+  }
+  .form-row { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); margin-bottom: 14px; }
+  .field label { display: block; font-size: 0.85rem; color: var(--muted); margin-bottom: 6px; }
+  .field input {
+    width: 100%;
+    padding: 9px 12px;
+    border-radius: 4px;
+    border: 1px solid rgba(241,234,217,0.25);
+    background: var(--bg);
+    color: var(--cream);
+    font-family: 'Inter', sans-serif;
+  }
+  .field input.input-error { border-color: var(--error); }
+  .field .error-text {
+    color: var(--error);
+    font-size: 0.78rem;
+    margin-top: 4px;
+    min-height: 16px;
+  }
+
+  footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.85rem; }

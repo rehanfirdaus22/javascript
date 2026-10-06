@@ -6,83 +6,7 @@
 <title>Toko Sepatu Ala Rehan</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #1f2a24;
-    --bg-card: #26332c;
-    --cream: #f1ead9;
-    --accent: #be5a2e;
-    --muted: #9fb0a3;
-  }
-  * { box-sizing: border-box; }
-  body {
-    margin: 0;
-    background: var(--bg);
-    color: var(--cream);
-    font-family: 'Inter', sans-serif;
-    line-height: 1.5;
-  }
-  header {
-    padding: 48px 24px 32px;
-    text-align: center;
-    border-bottom: 1px solid rgba(241,234,217,0.15);
-  }
-  header h1 {
-    font-family: 'Fraunces', serif;
-    font-size: clamp(2rem, 5vw, 3rem);
-    font-weight: 700;
-    margin: 0 0 8px;
-  }
-  header p {
-    color: var(--muted);
-    margin: 0;
-    max-width: 480px;
-    margin-inline: auto;
-  }
-  main {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 40px 24px 64px;
-  }
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 20px;
-  }
-  .card {
-    background: var(--bg-card);
-    border-radius: 4px;
-    padding: 20px;
-    border-left: 3px solid var(--accent);
-  }
-  .card h3 {
-    font-family: 'Fraunces', serif;
-    font-size: 1.15rem;
-    margin: 0 0 6px;
-  }
-  .card .kategori {
-    color: var(--muted);
-    font-size: 0.85rem;
-    margin-bottom: 10px;
-  }
-  .card .harga {
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--accent);
-  }
-  .card .stok {
-    margin-top: 8px;
-    font-size: 0.85rem;
-    color: var(--muted);
-  }
-  .stok.habis { color: #d98a6f; }
-  footer {
-    text-align: center;
-    padding: 24px;
-    color: var(--muted);
-    font-size: 0.85rem;
-  }
-</style>
+<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
@@ -92,38 +16,39 @@
   </header>
 
   <main>
-    <div class="grid">
-      <div class="card">
-        <h3>Sepatu Lari Aero X</h3>
-        <div class="kategori">Lari</div>
-        <div class="harga">Rp 350.000</div>
-        <div class="stok">Stok: 12</div>
-      </div>
-      <div class="card">
-        <h3>Sepatu Kasual Denim</h3>
-        <div class="kategori">Kasual</div>
-        <div class="harga">Rp 275.000</div>
-        <div class="stok">Stok: 5</div>
-      </div>
-      <div class="card">
-        <h3>Sepatu Boot Kulit</h3>
-        <div class="kategori">Boot</div>
-        <div class="harga">Rp 480.000</div>
-        <div class="stok habis">Stok habis</div>
-      </div>
-      <div class="card">
-        <h3>Sandal Gunung Trail</h3>
-        <div class="kategori">Outdoor</div>
-        <div class="harga">Rp 150.000</div>
-        <div class="stok">Stok: 20</div>
-      </div>
-      <div class="card">
-        <h3>Sepatu Formal Oxford</h3>
-        <div class="kategori">Formal</div>
-        <div class="harga">Rp 500.000</div>
-        <div class="stok">Stok: 3</div>
-      </div>
+    <div class="toolbar">
+      <input type="text" id="searchInput" placeholder="Cari nama produk...">
+      <button type="button" class="secondary" id="toggleHabisBtn">Sembunyikan produk habis</button>
     </div>
+
+    <div class="grid" id="produkGrid"></div>
+
+    <form class="form-tambah" id="formTambah" novalidate>
+      <h2>Tambah Produk Baru</h2>
+      <div class="form-row">
+        <div class="field">
+          <label for="inputNama">Nama produk</label>
+          <input type="text" id="inputNama">
+          <div class="error-text" id="errorNama"></div>
+        </div>
+        <div class="field">
+          <label for="inputKategori">Kategori</label>
+          <input type="text" id="inputKategori">
+          <div class="error-text" id="errorKategori"></div>
+        </div>
+        <div class="field">
+          <label for="inputHarga">Harga (Rp)</label>
+          <input type="number" id="inputHarga">
+          <div class="error-text" id="errorHarga"></div>
+        </div>
+        <div class="field">
+          <label for="inputStok">Stok</label>
+          <input type="number" id="inputStok">
+          <div class="error-text" id="errorStok"></div>
+        </div>
+      </div>
+      <button type="submit">Tambah Produk</button>
+    </form>
   </main>
 
   <footer>
