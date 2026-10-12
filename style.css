@@ -117,3 +117,28 @@
   }
 
   footer { text-align: center; padding: 24px; color: var(--muted); font-size: 0.85rem; }
+
+/* Tombol hapus pada kartu produk */
+.btn-hapus {
+  margin-top: 12px;
+  padding: 6px 12px;
+  font-size: 0.8rem;
+  background: transparent;
+  border: 1px solid var(--error);
+  color: var(--error);
+}
+
+/* Notifikasi singkat (dianimasikan dengan jQuery) */
+.notif {
+  display: none;
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--accent);
+  color: var(--cream);
+  padding: 10px 20px;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  z-index: 10;
+}
